@@ -1,11 +1,14 @@
 import React from 'react'
 import './Home.scss'
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+  const message = useSelector((state: any) => state.message.value);
+
   return (
     <div className="homeContainer">
       <div className="welcome-box border border-2 mb-5 p-2">
-        <div className="h5 font-monospace">Welcome</div>
+        <div className="h5 font-monospace">{message}</div>
         <div className="font-monospace">A template website showcasing commonly used React patterns, concepts, and tools. Bootstraped with Create React App </div>
       </div>
       <div className="row">

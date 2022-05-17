@@ -19,13 +19,13 @@ const Navbar = () => {
         <Nav variant="pills" className="justify-content-end" 
           defaultActiveKey={location.pathname} onSelect={handleRoute}>
           <Nav.Item>
-            <Nav.Link eventKey="/home">Home</Nav.Link>
+            <Nav.Link eventKey="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="/links">Links</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/redux-ex">Example</Nav.Link>
+            <Nav.Link eventKey="/redux-ex">Examples</Nav.Link>
           </Nav.Item>
         </Nav>
       </div>

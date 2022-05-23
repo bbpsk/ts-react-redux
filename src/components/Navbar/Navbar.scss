@@ -1,0 +1,9 @@
+.nav-pills .nav-link.active {
+  background-color: mediumorchid;
+}
+.nav-link {
+  color: mediumorchid;
+  &:hover, &:active {
+    color: darkorchid;
+  }
+}

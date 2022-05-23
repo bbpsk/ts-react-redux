@@ -3,3 +3,9 @@
 .App {
   text-align: center;
 }
+a {
+  color: mediumorchid;
+  &:hover {
+    color: darkorchid;
+  }
+}

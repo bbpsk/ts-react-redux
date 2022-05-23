@@ -1,6 +1,17 @@
 .reduxForm {
   max-width: 35rem;
   padding: 1.5rem;
-  border: 1px solid gray;
+  margin-right: 0.75rem;
+  border: 1px solid lightgrey;
   border-radius: 0.25rem;
+}
+
+.btn-primary {
+  background-color: #009e9e;
+  &:hover{
+    background-color: teal;
+  }
+}
+.form-check-input:checked {
+  background-color: teal;
 }

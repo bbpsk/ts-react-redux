@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div className="homeContainer">
-      <div className="welcome-box border border-2 mb-5 p-2">
+      <div className="welcome-box mb-5 p-2">
         <div className="h5 font-monospace">{message}</div>
         <div className="font-monospace">A template website showcasing commonly used React patterns, concepts, and tools. Bootstraped with Create React App </div>
       </div>

@@ -3,7 +3,8 @@ import React from 'react'
 const Links = () => {
   return (
     <div className='linksContainer'>
-      <div className="font-monospace">Below, you will find some helpful links to documentation 
+      <div className='h5 font-monospace'>Links</div>
+      <div className="py-2 font-monospace">Below, you will find some helpful links to documentation 
         that was referenced in the making of this website</div>
       <ul className="mt-4">
         <li className="my-2">

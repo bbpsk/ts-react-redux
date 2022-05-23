@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import Nav from "react-bootstrap/Nav";
 import { useNavigate, useLocation } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import './Navbar.scss';
 
 const Navbar = () => {
   const navigate = useNavigate();

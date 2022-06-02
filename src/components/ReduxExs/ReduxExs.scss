@@ -4,11 +4,38 @@
   margin-right: 0.75rem;
   border: 1px solid lightgrey;
   border-radius: 0.25rem;
+
+  .colorBox {
+    width: 4.5rem;
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &.orchid {
+      background-color: mediumorchid;
+    }
+    &.violetred {
+      background-color: palevioletred;
+    }
+    &.coral {
+      background-color: lightcoral;
+    }
+    &.orange {
+      background-color: orange;
+    }
+  }
 }
 
 .btn-primary {
-  background-color: #009e9e;
-  &:hover{
+  background-color: #009292;
+  border-color: teal;
+  &:hover {
+    background-color: teal;
+    background-color: teal;
+  }
+  &:focus {
+    background-color: teal;
     background-color: teal;
   }
 }

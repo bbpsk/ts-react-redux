@@ -1,9 +1,11 @@
+@use '../../variables.scss' as *;
+
 .nav-pills .nav-link.active {
-  background-color: mediumorchid;
+  background-color: var(--color-primary);
 }
 .nav-link {
-  color: mediumorchid;
+  color: var(--color-primary);
   &:hover, &:active {
-    color: darkorchid;
+    color: var(--color-dark);
   }
 }

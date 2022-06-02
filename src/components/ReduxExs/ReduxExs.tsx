@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { changeMessage, allCaps } from '../../store/messageSlice';
+import { toggleTheme, changePrimaryColor } from '../../store/themeSlice';
+import { RootState } from '../../store/store';
 import './ReduxExs.scss';
-import { switchTheme } from '../../store/themeSlice';
 
 const ReduxExs = () => {
-  const message: string = useSelector((state: any) => state.message.value);
-  const darkTheme: boolean = useSelector((state: any) => state.darkTheme.value);
+  const message = useSelector((state: RootState) => state.message.value);
+  const isDarkTheme = useSelector((state: RootState) => state.theme.isDark);
+  const initColor = useSelector((state: RootState) => state.theme.primaryColor);
   const dispatch = useDispatch();
 
   const [input, setInput] = useState('');
   const [isChecked, setIsChecked] = useState(false);
-  const [isToggled, setIsToggled] = useState(darkTheme);
+
+  const colors = ['orchid', 'violetred', 'coral', 'orange'];
 
   const update = () => {
     if(input){
@@ -25,9 +28,11 @@ const ReduxExs = () => {
     setInput('');
     setIsChecked(false);
   }
-  const toggleTheme = () => {
-    setIsToggled(!isToggled);
-    dispatch(switchTheme());
+  const toggleDarkMode = () => {
+    dispatch(toggleTheme());
+  }
+  const changeColor = (color: string) => {
+    dispatch(changePrimaryColor(color));
   }
 
   return (
@@ -38,7 +43,7 @@ const ReduxExs = () => {
       <div className="row justify-content-evenly">
 
         <Form.Group className="my-3 reduxForm">
-          <Form.Label htmlFor="messageInput">Welcome Message</Form.Label>
+          <Form.Label htmlFor="messageInput">Welcome Message: </Form.Label>
           <Form.Control id="messageInput" type="text" placeholder={message} 
             value={input} onChange={(event) => setInput(event.target.value)}/>
           <div className="form-check my-3">
@@ -48,15 +53,30 @@ const ReduxExs = () => {
               All Caps
             </label>
           </div>
-          <Button onClick={update}>Update</Button>
+          <Button className="mt-2" onClick={update}>Update</Button>
         </Form.Group>
 
         <Form.Group className='my-3 reduxForm'>
-          <div className='my-2'>Theme: </div>
-          <div className="form-check form-switch">
+          <div className='mb-2'>Theme: </div>
+          <div className="form-check form-switch mb-4">
             <input className="form-check-input" type="checkbox" role="switch" id="switch" 
-              checked={isToggled} onChange={toggleTheme}/>
+              checked={isDarkTheme} onChange={toggleDarkMode}/>
             <label className="form-check-label" htmlFor="switch">Dark Theme</label>
+          </div>
+          <div className="mb-1">Primary Color: </div>
+          <div className="d-flex justify-content-evenly">
+            {colors.map((color) => (
+              <div className={`colorBox ${color}`} onClick={() => changeColor(color)} />
+            ))}            
+          </div>
+        </Form.Group>
+
+        <Form.Group className='my-3 reduxForm'>
+          <div className='mb-2'>Timer: </div>
+          <div className="d-flex justify-content-between">
+            <Button>Start</Button>
+            <Button>Pause</Button>
+            <Button>Reset</Button>
           </div>
         </Form.Group>
       </div>

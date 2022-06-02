@@ -5,6 +5,8 @@ import themeReducer from './themeSlice';
 export const store = configureStore({
   reducer: {
     message: messageReducer,
-    darkTheme: themeReducer
+    theme: themeReducer
   },
-})
+});
+
+export type RootState = ReturnType<typeof store.getState>;

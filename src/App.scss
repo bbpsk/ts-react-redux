@@ -1,11 +1,12 @@
+@use './variables.scss' as *;
 @import "~bootstrap/scss/bootstrap";
 
 .App {
   text-align: center;
 }
 a {
-  color: mediumorchid;
+  color: var(--color-primary);
   &:hover {
-    color: darkorchid;
+    color: var(--color-dark);
   }
 }

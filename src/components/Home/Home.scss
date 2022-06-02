@@ -1,6 +1,8 @@
+@use '../../variables.scss' as *;
+
 .homeContainer {
   .welcome-box {
-    border: 1px solid mediumorchid;
+    border: 3px outset var(--color-primary);
     border-radius: 0.25rem;
   }
   .image {
@@ -39,5 +41,10 @@
   .redux-logo {
     background: url(../../assets/redux.svg) center no-repeat;
     background-size: contain;
+  }
+}
+.dark {
+  .list-group-item {
+    background-color: gainsboro;
   }
 }

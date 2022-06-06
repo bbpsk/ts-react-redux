@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="row footerContainer">
       <div className={classNames("footerText", textClass)}>
-        Site designed and developed by Rachel Halepeska. Last updated: May 14,
+        Site designed and developed by Rachel Halepeska. Last updated: June 06,
         2022
       </div>
     </div>

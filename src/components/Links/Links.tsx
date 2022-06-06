@@ -30,6 +30,14 @@ const Links = () => {
       text: "Sass Docs",
       link: "https://sass-lang.com/documentation/",
     },
+    {
+      text: "React Testing Library Example",
+      link: "https://testing-library.com/docs/react-testing-library/example-intro",
+    },
+    {
+      text: "Jest Docs",
+      link: "https://jestjs.io/docs/getting-started",
+    },
   ];
 
   return (

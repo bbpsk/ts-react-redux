@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from './store';
 
 const initialState = {
   value: 'Welcome',
@@ -18,6 +19,8 @@ const messageSlice = createSlice({
     }
   }
 })
-export const {allCaps, changeMessage, addToMessage} = messageSlice.actions;
 
+export const {allCaps, changeMessage, addToMessage} = messageSlice.actions;
 export default messageSlice.reducer;
+//Selectors
+export const selectMessage = (state: RootState) => state.message.value;

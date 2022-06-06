@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import differenceInSeconds from 'date-fns/differenceInSeconds'
+import { RootState } from "./store";
 
 const initialState = {
   startTime: new Date().getTime(),
@@ -27,3 +28,5 @@ const timerSlice = createSlice({
 
 export const {start, pause, reset} = timerSlice.actions;
 export default timerSlice.reducer;
+//Selectors
+export const selectTimer = (state: RootState) => state.timer;

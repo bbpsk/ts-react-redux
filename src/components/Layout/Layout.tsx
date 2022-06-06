@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 import "./Layout.scss";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { RootState } from "../../store/store";
+import { selectTheme } from "../../store/themeSlice";
 
 const Layout = () => {
-  const theme = useSelector((state: RootState) => state.theme);
+  const theme = useSelector(selectTheme);
 
   return (
     <div

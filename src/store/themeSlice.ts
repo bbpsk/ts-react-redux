@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 
 const initialState = {
   isDark: false,
@@ -19,3 +20,6 @@ const themeSlice = createSlice({
 
 export const {toggleTheme, changePrimaryColor} = themeSlice.actions;
 export default themeSlice.reducer;
+//Selectors
+export const selectTheme = (state: RootState) => state.theme;
+export const selectDarkTheme = (state: RootState) => state.theme.isDark;

@@ -32,11 +32,17 @@
   border-color: teal;
   &:hover {
     background-color: teal;
-    background-color: teal;
+    border-color: teal;
   }
   &:focus {
     background-color: teal;
-    background-color: teal;
+    border-color: teal;
+  }
+  &:disabled {
+    background-color: dimgray;
+    border-color: dimgray;
+    pointer-events: unset;
+    cursor: not-allowed;
   }
 }
 .form-check-input:checked {

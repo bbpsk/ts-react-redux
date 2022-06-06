@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { changeMessage, allCaps } from '../../store/messageSlice';
 import { toggleTheme, changePrimaryColor } from '../../store/themeSlice';
+import { start, pause, reset } from '../../store/timerSlice';
 import { RootState } from '../../store/store';
 import './ReduxExs.scss';
+import Timer from '../Timer/Timer';
 
 const ReduxExs = () => {
   const message = useSelector((state: RootState) => state.message.value);
   const isDarkTheme = useSelector((state: RootState) => state.theme.isDark);
-  const initColor = useSelector((state: RootState) => state.theme.primaryColor);
+  const color = useSelector((state: RootState) => state.theme.primaryColor);
+  const timer = useSelector((state: RootState) => state.timer);
   const dispatch = useDispatch();
 
   const [input, setInput] = useState('');
   const [isChecked, setIsChecked] = useState(false);
 
   const colors = ['orchid', 'violetred', 'coral', 'orange'];
-
+  
   const update = () => {
     if(input){
       dispatch(changeMessage(input));
@@ -66,17 +69,17 @@ const ReduxExs = () => {
           <div className="mb-1">Primary Color: </div>
           <div className="d-flex justify-content-evenly">
             {colors.map((color) => (
-              <div className={`colorBox ${color}`} onClick={() => changeColor(color)} />
-            ))}            
+              <div key={color} className={`colorBox ${color}`} onClick={() => changeColor(color)} />
+            ))}      
           </div>
         </Form.Group>
 
         <Form.Group className='my-3 reduxForm'>
-          <div className='mb-2'>Timer: </div>
+          <Timer />
           <div className="d-flex justify-content-between">
-            <Button>Start</Button>
-            <Button>Pause</Button>
-            <Button>Reset</Button>
+            <Button disabled={timer.isRunning} onClick={() => dispatch(start())}>Start</Button>
+            <Button disabled={!timer.isRunning} onClick={() => dispatch(pause())}>Pause</Button>
+            <Button onClick={() => dispatch(reset())}>Reset</Button>
           </div>
         </Form.Group>
       </div>

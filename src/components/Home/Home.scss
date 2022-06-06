@@ -1,9 +1,16 @@
 @use '../../variables.scss' as *;
 
 .homeContainer {
-  .welcome-box {
+  .welcomeBox {
     border: 3px outset var(--color-primary);
     border-radius: 0.25rem;
+  }
+  .timerContainer{
+    margin: 1rem 0.25rem;
+    padding: 0.75rem 0.5rem 0;
+    width: 10rem;
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
   }
   .image {
     width: 5rem;

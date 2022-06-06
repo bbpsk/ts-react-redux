@@ -1,13 +1,14 @@
 import React from 'react'
-import './Home.scss'
 import { useSelector } from 'react-redux';
+import Timer from '../Timer/Timer';
+import './Home.scss'
 
 const Home = () => {
   const message = useSelector((state: any) => state.message.value);
 
   return (
     <div className="homeContainer">
-      <div className="welcome-box mb-5 p-2">
+      <div className="welcomeBox mb-5 p-2">
         <div className="h5 font-monospace">{message}</div>
         <div className="font-monospace">A template website showcasing commonly used React patterns, concepts, and tools. Bootstraped with Create React App </div>
       </div>
@@ -33,6 +34,9 @@ const Home = () => {
             <div className="image redux-logo"></div>
           </div>
         </div>
+      </div>
+      <div className="timerContainer">
+        <Timer />
       </div>
     </div>
   )

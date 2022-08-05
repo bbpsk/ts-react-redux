@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from './store';
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 
 const initialState = {
-  value: 'Welcome',
-}
+  value: "Welcome",
+};
 const messageSlice = createSlice({
-  name: 'message',
+  name: "message",
   initialState: initialState,
   reducers: {
     allCaps: (state) => {
@@ -16,11 +16,11 @@ const messageSlice = createSlice({
     },
     addToMessage: (state, action) => {
       state.value += action.payload;
-    }
-  }
-})
+    },
+  },
+});
 
-export const {allCaps, changeMessage, addToMessage} = messageSlice.actions;
+export const { allCaps, changeMessage, addToMessage } = messageSlice.actions;
 export default messageSlice.reducer;
 //Selectors
 export const selectMessage = (state: RootState) => state.message.value;

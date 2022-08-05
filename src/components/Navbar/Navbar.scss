@@ -1,11 +1,15 @@
-@use '../../variables.scss' as *;
+@use "../../variables.scss" as *;
 
 .nav-pills .nav-link.active {
   background-color: var(--color-primary);
 }
 .nav-link {
   color: var(--color-primary);
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: var(--color-dark);
   }
+}
+.setWidth {
+  width: fit-content;
 }

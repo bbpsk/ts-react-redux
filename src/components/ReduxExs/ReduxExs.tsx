@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {
@@ -21,6 +22,7 @@ const ReduxExs = () => {
   const isDarkTheme = useSelector(selectDarkTheme);
   const timer = useSelector(selectTimer);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const [input, setInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
@@ -53,7 +55,7 @@ const ReduxExs = () => {
       </div>
       <div className="row justify-content-evenly">
         <Form.Group className="my-3 reduxForm">
-          <Form.Label htmlFor="messageInput">Welcome Message: </Form.Label>
+          <Form.Label htmlFor="messageInput">{t("examples.msg")} </Form.Label>
           <Form.Control
             id="messageInput"
             type="text"
@@ -74,12 +76,12 @@ const ReduxExs = () => {
             </label>
           </div>
           <Button className="mt-2" onClick={update}>
-            Update
+            {t("examples.update")}
           </Button>
         </Form.Group>
 
         <Form.Group className="my-3 reduxForm">
-          <div className="mb-2">Theme: </div>
+          <div className="mb-2">{t("examples.theme")} </div>
           <div className="form-check form-switch mb-4">
             <input
               className="form-check-input"
@@ -93,7 +95,7 @@ const ReduxExs = () => {
               Dark Theme
             </label>
           </div>
-          <div className="mb-1">Primary Color: </div>
+          <div className="mb-1">{t("examples.color")} </div>
           <div className="d-flex justify-content-evenly">
             {colors.map((color) => (
               <div
@@ -112,15 +114,17 @@ const ReduxExs = () => {
               disabled={timer.isRunning}
               onClick={() => dispatch(start())}
             >
-              Start
+              {t("examples.btn1")}
             </Button>
             <Button
               disabled={!timer.isRunning}
               onClick={() => dispatch(pause())}
             >
-              Pause
+              {t("examples.btn2")}
             </Button>
-            <Button onClick={() => dispatch(reset())}>Reset</Button>
+            <Button onClick={() => dispatch(reset())}>
+              {t("examples.btn3")}
+            </Button>
           </div>
         </Form.Group>
       </div>

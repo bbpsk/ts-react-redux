@@ -8,5 +8,5 @@ test("renders without crashing", () => {
 test("should have 9 links in the list", () => {
   render(<Links />);
   const list = screen.getAllByRole("link");
-  expect(list).toHaveLength(9);
+  expect(list).toHaveLength(10);
 });

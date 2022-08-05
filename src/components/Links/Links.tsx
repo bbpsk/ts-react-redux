@@ -38,6 +38,10 @@ const Links = () => {
       text: "Jest Docs",
       link: "https://jestjs.io/docs/getting-started",
     },
+    {
+      text: "React i18next Step by Step Guide",
+      link: "https://react.i18next.com/latest/using-with-hooks",
+    },
   ];
 
   return (

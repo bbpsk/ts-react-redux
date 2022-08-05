@@ -1,38 +1,51 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Nav from "react-bootstrap/Nav";
+import Form from "react-bootstrap/Form";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   const handleRoute = (eventKey: any) => {
     navigate(eventKey);
   };
 
   return (
-    <div className="row py-3 px-lg-4 border-bottom">
-      <div className="col-7">
-        <div className="h3">Typescript React Redux App</div>
-      </div>
-      <div className="col-5">
+    <div className="row justify-content-between py-3 border-bottom">
+      <div className="h3 m-2 setWidth">Typescript React Redux App</div>
+
+      <div className="setWidth">
         <Nav
           variant="pills"
-          className="justify-content-end"
+          className="m-2"
           defaultActiveKey={location.pathname}
           onSelect={handleRoute}
         >
           <Nav.Item>
-            <Nav.Link eventKey="/">Home</Nav.Link>
+            <Nav.Link eventKey="/">{t("nav.home")}</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/links">Links</Nav.Link>
+            <Nav.Link eventKey="/links">{t("nav.links")}</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/redux-ex">Examples</Nav.Link>
+            <Nav.Link eventKey="/redux-ex">{t("nav.ex")}</Nav.Link>
           </Nav.Item>
         </Nav>
+        <div className="mx-2">
+          <Form.Select
+            size="sm"
+            value={i18n.language}
+            onChange={(event) => i18n.changeLanguage(event.target.value)}
+          >
+            <option value="en">{t("langs.en")}</option>
+            <option value="es">{t("langs.es")}</option>
+            <option value="fr">{t("langs.fr")}</option>
+          </Form.Select>
+        </div>
       </div>
     </div>
   );

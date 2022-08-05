@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { formatSeconds, calcSeconds } from "../../utils/formatTime";
 
 const Timer = () => {
   const timer = useSelector((state: RootState) => state.timer);
+  const { t } = useTranslation();
 
   const initialTime = timer.isRunning
     ? formatSeconds(calcSeconds(timer.startTime, timer.offset))
@@ -29,7 +31,7 @@ const Timer = () => {
 
   return (
     <div className="mb-3 d-flex justify-content-between">
-      <div>Timer:</div>
+      <div>{t("examples.timer")}</div>
       <div className=" fw-bold">{time}</div>
     </div>
   );

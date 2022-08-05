@@ -33,6 +33,9 @@ const Home = () => {
               Configured redux store and reducers using Redux Toolkit, including
               multiple examples
             </li>
+            <li className="list-group-item">
+              Localization implemented with React i18next
+            </li>
           </ul>
         </div>
         <div className="col-lg-6 col-12">

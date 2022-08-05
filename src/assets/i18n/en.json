@@ -1,0 +1,22 @@
+{
+  "langs": {
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  },
+  "nav": {
+    "home": "Home",
+    "links": "Links",
+    "ex": "Examples"
+  },
+  "examples": {
+    "msg": "Welcome Message",
+    "update": "Update",
+    "theme": "Theme",
+    "color": "Primary Color",
+    "timer": "Timer",
+    "btn1": "Start",
+    "btn2": "Pause",
+    "btn3": "Reset"
+  }
+}
